@@ -40,6 +40,18 @@
     .music{position:fixed;right:16px;bottom:16px;z-index:15;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(90,7,24,.9);color:white;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25)}.footer{color:var(--cream);text-align:center;margin-top:24px;opacity:.82;font-size:.92rem}
     @media(max-width:700px){.opening{padding-bottom:88px}.countdown{grid-template-columns:repeat(2,1fr)}.info-grid,.buttons{grid-template-columns:1fr}.panel{padding:18px}.map iframe{height:240px}.seal{width:104px;height:104px}.open-btn{bottom:-68px}}
     @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  
+    /* Yalnızca açılış zarfının foto-gerçekçi görünümü */
+    .photo-envelope{width:min(88vw,450px);aspect-ratio:1200/817;border:0;border-radius:22px;background:#510917;box-shadow:0 26px 65px rgba(0,0,0,.48),0 5px 14px rgba(20,0,6,.34);overflow:visible}
+    .photo-envelope:before,.photo-envelope:after,.photo-envelope .flap,.photo-envelope .seal{display:none}
+    .photo-envelope .open-btn{z-index:6}
+    .envelope-open-base{position:absolute;inset:3px;z-index:1;border-radius:18px;overflow:hidden;background:#520916;box-shadow:inset 0 0 0 1px rgba(255,210,190,.08),inset 0 0 28px rgba(24,0,7,.48)}
+    .envelope-open-base img,.envelope-closed-layer img{display:block;width:100%;height:100%;object-fit:cover}
+    .envelope-open-base img{border-radius:18px;transform:scale(1.012);filter:brightness(1.05) saturate(.8) contrast(.96);opacity:.97}
+    .envelope-open-base:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:18px;background:radial-gradient(circle at 50% 44%,rgba(123,25,47,.07),rgba(47,2,12,.2) 100%);box-shadow:inset 0 0 22px rgba(28,0,8,.38)}
+    .envelope-closed-layer{position:absolute;inset:0;z-index:4;border-radius:21px;overflow:hidden;backface-visibility:hidden;will-change:opacity}
+    .opening.opened .envelope-closed-layer{animation:cleanEnvelopeOpen .56s ease-in-out forwards;pointer-events:none}
+    @keyframes cleanEnvelopeOpen{0%{opacity:1}20%{opacity:1}100%{opacity:0}}
   </style>
 </head>
 <body>
@@ -48,9 +60,9 @@
     <span class="petal" style="left:10%;animation-delay:0s"></span><span class="petal" style="left:28%;animation-delay:4s"></span><span class="petal" style="left:49%;animation-delay:8s"></span><span class="petal" style="left:67%;animation-delay:2s"></span><span class="petal" style="left:86%;animation-delay:6s"></span>
   </div>
   <div class="opening" id="opening">
-    <div class="envelope">
-      <div class="flap"></div>
-      <div class="seal"><img src="altin-kugu-muhur.png" alt="Altın kuğu armalı mühür"></div>
+    <div class="envelope photo-envelope">
+      <div class="envelope-open-base"><img src="acik-zarf.jpg" alt="Tamamen açılmış bordo düğün zarfı"></div>
+      <div class="envelope-closed-layer"><img src="kapali-zarf.jpg" alt="Kuğu mühürlü kapalı bordo düğün zarfı"></div>
       <button class="open-btn" id="openInvitation">Daveti Aç</button>
     </div>
   </div>
@@ -82,3 +94,4 @@
   </script>
 </body>
 </html>
+
