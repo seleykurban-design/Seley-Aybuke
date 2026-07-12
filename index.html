@@ -48,6 +48,8 @@
     .photo-envelope .open-btn{z-index:6}
     .envelope-open-base{position:absolute;inset:3px;z-index:1;border-radius:18px;overflow:hidden;background:#520916;box-shadow:inset 0 0 0 1px rgba(255,210,190,.08),inset 0 0 28px rgba(24,0,7,.48)}
     .envelope-open-base img,.envelope-closed-layer img{display:block;width:100%;height:100%;object-fit:cover}
+    .envelope-closed-layer img{transform:scale(1.025)}
+    .envelope-closed-layer:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:21px;box-shadow:inset 0 0 0 2px #520916}
     .envelope-open-base img{border-radius:18px;transform:scale(1.012);filter:brightness(1.05) saturate(.8) contrast(.96);opacity:.97}
     .envelope-open-base:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:18px;background:radial-gradient(circle at 50% 44%,rgba(123,25,47,.07),rgba(47,2,12,.2) 100%);box-shadow:inset 0 0 22px rgba(28,0,8,.38)}
     .envelope-closed-layer{position:absolute;inset:0;z-index:4;border-radius:21px;overflow:hidden;backface-visibility:hidden;will-change:opacity}
@@ -67,7 +69,7 @@
     </div>
   </div>
   <main class="site" id="site">
-    <section class="hero"><div class="kicker">Düğün Davetiyesi</div><div class="swan-scene" aria-hidden="true"><img class="swan-emblem" src="altin-kugu-muhur.png" alt=""><span class="water-ripple"></span><span class="water-ripple second"></span></div><div class="name-wrap"><span class="name-spark s1"></span><span class="name-spark s2"></span><span class="name-spark s3"></span><span class="name-spark s4"></span><span class="name-spark s5"></span><h1>Aybüke & Seley</h1></div></section>
+    <section class="hero"><div class="kicker">Düğün Davetiyesi</div></section>
     <section class="card"><img src="davetiye.jpeg" alt="Aybüke ve Seley düğün davetiyesi"></section>
     <section class="panel">
       <h2>Düğünümüze Kalan Süre</h2>
